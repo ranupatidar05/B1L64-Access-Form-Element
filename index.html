@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Access Form Element</title>
+    </head>
+    <body>
+       <form onsubmit="return SubmitForm()">
+            <input id="n1" type="text" name="num1" placeholder="Enter the value1">
+            <input data-n2="n2" type="text" name="num2" placeholder="Enter the value2">
+            <input data-n2="n3" type="text" name="num2" placeholder="Enter the value3">
+
+            <input type="submit" value="submit">
+       </form> 
+
+       <br>
+       <br>
+       <br>
+       <br>
+       <hr>
+       <form>
+            <input type="text" placeholder="Enter the value">
+
+            <button type="submit">submit</button>
+       </form> 
+       <script>
+            //1. defination 
+            function SubmitForm(){
+                let number1 = document.getElementById('n1').value
+                var number2 = document.querySelector('[data-n2="n2"]').value
+                alert('ok ' + number1);
+                alert('ok ' + number2);
+                
+
+                let result = parseInt(number1) + parseInt(number2);
+                alert(result);
+                //obj.method()
+                localStorage.setItem('result',result);
+                return false;
+            }
+       </script>
+    </body>
+</html>
